@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: mart_taxi_daily_summary
+    description: >
+      Daily aggregated taxi trip metrics by company and payment type.
+      Source of truth for revenue and volume dashboards.
+
+    columns:
+      - name: trip_date
+        description: "Date of trips"
+        tests:
+          - not_null
+
+      - name: total_trips
+        description: "Total number of trips on this date"
+        tests:
+          - not_null
+
+      - name: avg_fare
+        description: "Average fare amount for this date and company"
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: "Sum of trip_total — primary revenue metric"
+        tests:
+          - not_null

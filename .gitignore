@@ -1,0 +1,11 @@
+DataGuard-env/
+.env
+__pycache__/
+gcp_credentials.json
+*.json
+taxi_dbt/target/
+taxi_dbt/dbt_packages/
+taxi_dbt/logs/
+~/.dbt/profiles.yml
+marquez.yml
+gx/uncommitted/

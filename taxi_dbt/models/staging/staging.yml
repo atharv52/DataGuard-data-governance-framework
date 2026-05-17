@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_taxi_trips
+    description: "Cleaned and standardized taxi trip records. Filters invalid fares and nulls."
+
+    columns:
+      - name: unique_key
+        description: "Unique trip identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: trip_start_timestamp
+        description: "Trip start time"
+        tests:
+          - not_null
+
+      - name: fare
+        description: "Base fare in USD — always >= 0 after staging filter"
+        tests:
+          - not_null
+
+      - name: payment_type
+        description: "Standardized payment method"
+        tests:
+          - accepted_values:
+              values:
+                - Cash
+                - Credit Card
+                - Mobile
+                - No Charge
+                - Unknown
+                - Prcard
+                - Dispute
+
+      - name: trip_miles
+        description: "Trip distance in miles"
+        tests:
+          - not_null

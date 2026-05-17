@@ -1,0 +1,9 @@
+pandera
+great-expectations
+presidio-analyzer
+presidio-anonymizer
+openlineage-python
+google-cloud-bigquery
+pandas
+db-dtypes
+python-dotenv

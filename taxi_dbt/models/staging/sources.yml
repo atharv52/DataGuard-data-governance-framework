@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: chicago_taxi
+    database: bigquery-public-data
+    schema: chicago_taxi_trips
+    description: "Chicago city taxi trips public dataset"
+
+    tables:
+      - name: taxi_trips
+        description: "Raw taxi trip records from Chicago open data portal"
+        columns:
+          - name: unique_key
+            description: "Unique identifier for each trip"
+          - name: trip_start_timestamp
+            description: "Trip start time in UTC"
+          - name: trip_end_timestamp
+            description: "Trip end time in UTC"
+          - name: trip_seconds
+            description: "Trip duration in seconds"
+          - name: trip_miles
+            description: "Trip distance in miles"
+          - name: fare
+            description: "Base fare amount in USD"
+          - name: tips
+            description: "Tip amount in USD"
+          - name: trip_total
+            description: "Total trip cost including fare, tips, and extras"
+          - name: payment_type
+            description: "Method of payment"
+          - name: company
+            description: "Taxi company name"
